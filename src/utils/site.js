@@ -67,6 +67,16 @@ export function getGoogleDrivePreviewUrl(url = '') {
   return `https://drive.google.com/file/d/${fileId}/preview`;
 }
 
+export function getGoogleDriveStreamUrl(url = '') {
+  const fileId = extractGoogleDriveFileId(url);
+
+  if (!fileId) {
+    return '';
+  }
+
+  return `https://drive.google.com/uc?export=download&id=${fileId}`;
+}
+
 export function getPreferredVideoSource(config) {
   return config?.assets?.heroVideoUrl || config?.assets?.heroVideo || '';
 }

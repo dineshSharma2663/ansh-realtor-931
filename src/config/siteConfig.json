@@ -14,8 +14,8 @@
     "galleryPath": "src/gallery/",
     "videosPath": "src/videos/",
     "wallpaper": "",
-    "heroVideo": "19.mov",
-    "heroVideoUrl": "https://drive.google.com/file/d/1neMJCn2TbkHCq2bRQ49JwpNWvytKZS14/view?usp=sharing"
+    "heroVideo": "123.mov",
+    "heroVideoUrl": ""
   },
 
   "gallery": {
@@ -35,14 +35,14 @@
     "description": "We deal in premium real estate brands and developers across prime locations.",
     "showNames": false,
     "logos": [
-      "Screenshot 2026-04-19 at 10.10.38 PM.png",
-      "Screenshot 2026-04-19 at 10.10.35 PM.png",
-      "Screenshot 2026-04-19 at 10.10.21 PM.png",
-      "altus.png",
-      "manohar.png",
-      "the-address.png",
-      "the-tiara.png",
-      "jubilee.png"
+        "Screenshot 2026-04-19 at 10.10.15 PM.png",
+        "Screenshot 2026-04-19 at 10.10.21 PM.png",
+        "Screenshot 2026-04-19 at 10.10.26 PM.png",
+        "Screenshot 2026-04-19 at 10.10.32 PM.png",
+        "Screenshot 2026-04-19 at 10.10.35 PM.png",
+        "Screenshot 2026-04-19 at 10.10.38 PM.png",
+        "Screenshot 2026-04-19 at 10.10.54 PM.png",
+        "Screenshot 2026-04-19 at 10.10.57 PM.png"
     ]
   },
 

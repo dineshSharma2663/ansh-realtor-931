@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/motion';
+import heroVideoFile from '../videos/123.mov';
 import {
   createWhatsAppLink,
   getGoogleDrivePreviewUrl,
@@ -16,7 +17,7 @@ function Hero({ config }) {
   const heroImage = config.assets?.wallpaper;
   const heroVideo = getPreferredVideoSource(config);
   const isDriveVideo = isGoogleDriveUrl(heroVideo);
-  const heroVideoPreview = getGoogleDrivePreviewUrl(heroVideo);
+  const heroVideoSource = isDriveVideo ? getGoogleDrivePreviewUrl(heroVideo) : (heroVideo === '123.mov' ? heroVideoFile : heroVideo);
   const whatsappHref = createWhatsAppLink(
     config.contact?.whatsapp,
     `Hi, I am interested in ${config.projectInfo?.name || 'your luxury properties'}. Please share details.`,
@@ -58,7 +59,7 @@ function Hero({ config }) {
     return () => {
       videoElement.removeEventListener('ended', handleEnded);
     };
-  }, [heroVideo, isDriveVideo]);
+  }, [heroVideoSource, isDriveVideo]);
 
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -66,20 +67,20 @@ function Hero({ config }) {
         style={{ y: heroY, scale: heroScale }}
         className="absolute inset-0 bg-hero-luxury"
       >
-        {heroVideo && isDriveVideo ? (
-          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {heroVideoSource && isDriveVideo ? (
+          <div className="absolute inset-0 overflow-hidden">
             <iframe
-              src={`${heroVideoPreview}${heroVideoPreview ? '?autoplay=1' : ''}`}
+              src={`${heroVideoSource}?autoplay=1`}
               title="Hero background video"
               allow="autoplay; fullscreen"
-              className="absolute left-1/2 top-1/2 h-[140%] w-[140%] min-w-[1200px] -translate-x-1/2 -translate-y-1/2 border-0 opacity-60"
+              className="absolute left-1/2 top-1/2 h-[135%] w-[135%] min-w-[1200px] -translate-x-1/2 -translate-y-1/2 border-0 opacity-65"
             />
           </div>
         ) : null}
-        {heroVideo && !isDriveVideo ? (
+        {heroVideoSource && !isDriveVideo ? (
           <video
             ref={videoRef}
-            className="h-full w-full object-cover opacity-40"
+            className="absolute left-1/2 top-1/2 h-[120%] w-[120%] min-w-[1000px] -translate-x-1/2 -translate-y-1/2 object-cover opacity-50"
             autoPlay
             muted
             loop
@@ -87,18 +88,18 @@ function Hero({ config }) {
             preload="metadata"
             poster={heroImage || undefined}
             onLoadedMetadata={(event) => {
-              event.currentTarget.defaultPlaybackRate = 0.6;
-              event.currentTarget.playbackRate = 0.6;
+              event.currentTarget.defaultPlaybackRate = 0.7;
+              event.currentTarget.playbackRate = 0.7;
             }}
           >
-            <source src={heroVideo} />
+            <source src={heroVideoSource} />
           </video>
         ) : null}
         {heroImage ? (
           <img
             src={heroImage}
             alt={config.projectInfo?.name || 'Luxury property'}
-            className={`h-full w-full object-cover ${heroVideo ? 'absolute inset-0 opacity-10' : 'opacity-25'}`}
+            className={`h-full w-full object-cover ${heroVideoSource ? 'absolute inset-0 opacity-10' : 'opacity-25'}`}
             loading="eager"
           />
         ) : null}
