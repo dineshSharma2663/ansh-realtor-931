@@ -14,7 +14,8 @@
     "galleryPath": "src/gallery/",
     "videosPath": "src/videos/",
     "wallpaper": "",
-    "heroVideo": "19.mov"
+    "heroVideo": "19.mov",
+    "heroVideoUrl": "https://drive.google.com/file/d/1neMJCn2TbkHCq2bRQ49JwpNWvytKZS14/view?usp=sharing"
   },
 
   "gallery": {

@@ -37,3 +37,36 @@ export function isPlotProject(project = {}) {
 export function hasTag(tags = [], value = '') {
   return tags.some((tag) => tag.toLowerCase() === value.toLowerCase());
 }
+
+export function extractGoogleDriveFileId(url = '') {
+  if (!url) {
+    return '';
+  }
+
+  const directMatch = url.match(/\/file\/d\/([^/]+)/i);
+
+  if (directMatch?.[1]) {
+    return directMatch[1];
+  }
+
+  const queryMatch = url.match(/[?&]id=([^&]+)/i);
+  return queryMatch?.[1] || '';
+}
+
+export function isGoogleDriveUrl(url = '') {
+  return /drive\.google\.com/i.test(url);
+}
+
+export function getGoogleDrivePreviewUrl(url = '') {
+  const fileId = extractGoogleDriveFileId(url);
+
+  if (!fileId) {
+    return '';
+  }
+
+  return `https://drive.google.com/file/d/${fileId}/preview`;
+}
+
+export function getPreferredVideoSource(config) {
+  return config?.assets?.heroVideoUrl || config?.assets?.heroVideo || '';
+}

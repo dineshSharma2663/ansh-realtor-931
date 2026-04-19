@@ -1,7 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/motion';
-import { createWhatsAppLink } from '../utils/site';
+import {
+  createWhatsAppLink,
+  getGoogleDrivePreviewUrl,
+  getPreferredVideoSource,
+  isGoogleDriveUrl,
+} from '../utils/site';
 
 function Hero({ config }) {
   const videoRef = useRef(null);
@@ -9,13 +14,19 @@ function Hero({ config }) {
   const heroY = useTransform(scrollY, [0, 500], [0, config.animations?.parallax ? 120 : 0]);
   const heroScale = useTransform(scrollY, [0, 400], [1, 1.08]);
   const heroImage = config.assets?.wallpaper;
-  const heroVideo = config.assets?.heroVideo;
+  const heroVideo = getPreferredVideoSource(config);
+  const isDriveVideo = isGoogleDriveUrl(heroVideo);
+  const heroVideoPreview = getGoogleDrivePreviewUrl(heroVideo);
   const whatsappHref = createWhatsAppLink(
     config.contact?.whatsapp,
     `Hi, I am interested in ${config.projectInfo?.name || 'your luxury properties'}. Please share details.`,
   );
 
   useEffect(() => {
+    if (isDriveVideo) {
+      return;
+    }
+
     const videoElement = videoRef.current;
 
     if (!videoElement) {
@@ -47,7 +58,7 @@ function Hero({ config }) {
     return () => {
       videoElement.removeEventListener('ended', handleEnded);
     };
-  }, [heroVideo]);
+  }, [heroVideo, isDriveVideo]);
 
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -55,7 +66,17 @@ function Hero({ config }) {
         style={{ y: heroY, scale: heroScale }}
         className="absolute inset-0 bg-hero-luxury"
       >
-        {heroVideo ? (
+        {heroVideo && isDriveVideo ? (
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <iframe
+              src={`${heroVideoPreview}${heroVideoPreview ? '?autoplay=1' : ''}`}
+              title="Hero background video"
+              allow="autoplay; fullscreen"
+              className="absolute left-1/2 top-1/2 h-[140%] w-[140%] min-w-[1200px] -translate-x-1/2 -translate-y-1/2 border-0 opacity-60"
+            />
+          </div>
+        ) : null}
+        {heroVideo && !isDriveVideo ? (
           <video
             ref={videoRef}
             className="h-full w-full object-cover opacity-40"
