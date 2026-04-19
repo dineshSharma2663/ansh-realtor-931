@@ -1,0 +1,156 @@
+{
+  "site": {
+    "title": "Luxury Real Estate Portfolio",
+    "tagline": "Find Your Dream Luxury Home",
+    "themeColor": "#0f172a",
+    "accentColor": "#d4af37",
+    "font": "Poppins",
+    "layout": "premium"
+  },
+
+  "assets": {
+    "logosPath": "/assets/logos/",
+    "imagesPath": "src/images/",
+    "galleryPath": "src/gallery/",
+    "videosPath": "src/videos/",
+    "wallpaper": "",
+    "heroVideo": "19.mov"
+  },
+
+  "gallery": {
+    "title": "Inside The Tiara",
+    "subtitle": "A cinematic collection of views, materiality, and elevated spaces from the project gallery."
+  },
+
+  "profile": {
+    "name": "Ansh Realtor",
+    "role": "Luxury Property Consultant",
+    "image": "anshRealtor.png",
+    "bio": "Personalized guidance for premium apartments, plots, pricing strategy, and direct inventory access across prime Chandigarh micro-markets."
+  },
+
+  "brands": {
+    "mode": "dynamic",
+    "description": "We deal in premium real estate brands and developers across prime locations.",
+    "showNames": false,
+    "logos": [
+      "Screenshot 2026-04-19 at 10.10.38 PM.png",
+      "Screenshot 2026-04-19 at 10.10.35 PM.png",
+      "Screenshot 2026-04-19 at 10.10.21 PM.png",
+      "altus.png",
+      "manohar.png",
+      "the-address.png",
+      "the-tiara.png",
+      "jubilee.png"
+    ]
+  },
+
+  "sections": {
+    "showHero": true,
+    "showProjectIntro": true,
+    "showProjects": true,
+    "showAmenities": true,
+    "showLocation": true,
+    "showBrands": true,
+    "showVideos": true,
+    "showGallery": true,
+    "showContact": true
+  },
+
+  "animations": {
+    "enable": true,
+    "type": "fade-in",
+    "duration": 0.8,
+    "stagger": 0.2,
+    "parallax": true,
+    "smoothScroll": true
+  },
+
+  "projectInfo": {
+    "name": "The Tiara",
+    "location": "Medicity, New Chandigarh",
+    "type": "Ultra Luxury Apartments",
+    "bhk": ["4+1 BHK", "5+1 BHK"],
+    "developer": "Sham Exotic Group",
+    "description": "Spacious ultra-luxury residences designed for modern elite living with world-class architecture, premium amenities, and serene surroundings."
+  },
+
+  "amenities": [
+    "Luxury Clubhouse",
+    "Swimming Pool",
+    "Modern Gym",
+    "Landscaped Gardens",
+    "24x7 Security",
+    "Dedicated Parking",
+    "Kids Play Area",
+    "Jogging Track"
+  ],
+
+  "locationHighlights": [
+    "Close to Chandigarh City",
+    "Peaceful & Green Environment",
+    "Excellent Road Connectivity",
+    "Near Hospitals & Schools",
+    "Proximity to IT & Business Hubs"
+  ],
+
+  "projects": [
+    {
+      "title": "The Tiara - 4+1 BHK",
+      "description": "Premium ultra luxury apartment with modern interiors and spacious layout.",
+      "price": "On Request",
+      "location": "New Chandigarh",
+      "image": "Screenshot 2026-04-19 at 8.23.03 PM.png",
+      "video": "19.mov",
+      "tags": ["Luxury", "4BHK", "Ready Soon"],
+      "status": "Available"
+    },
+    {
+      "title": "The Tiara - 5+1 BHK",
+      "description": "Exclusive high-end residence for premium lifestyle buyers.",
+      "price": "On Request",
+      "location": "New Chandigarh",
+      "image": "Screenshot 2026-04-19 at 8.24.27 PM.png",
+      "video": "",
+      "tags": ["Ultra Luxury", "5BHK"],
+      "status": "Available"
+    },
+    {
+      "title": "Premium 400 Gaj Plot",
+      "description": "Limited inventory premium plot available directly from the company. Ideal for luxury home construction in a prime location.",
+      "price": "On Request",
+      "location": "Altus, New Chandigarh",
+      "plotSize": "400 Gaj",
+      "image": "Screenshot 2026-04-19 at 8.25.37 PM.png",
+      "video": "",
+      "tags": ["Plot", "Investment", "Limited Inventory"],
+      "status": "Available",
+      "featured": true,
+      "source": "Direct from Company"
+    }
+  ],
+
+  "ui": {
+    "navbar": {
+      "sticky": true,
+      "transparentOnTop": true
+    },
+    "cards": {
+      "rounded": "2xl",
+      "shadow": "xl",
+      "hoverEffect": "scale"
+    },
+    "buttons": {
+      "style": "rounded-full",
+      "primary": "accent"
+    }
+  },
+
+  "contact": {
+    "companyName": "Ansh Realtor",
+    "owner": "Prop. Mr. Balbir Singh",
+    "phone": "+916283091186",
+    "whatsapp": "+916283091186",
+    "ctaText": "Book Site Visit"
+  }
+}
