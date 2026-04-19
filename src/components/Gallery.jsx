@@ -110,9 +110,6 @@ function GalleryCard({ item, index, animations, tall = false, featured = false }
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/10 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-          <div className="inline-flex rounded-full border border-white/15 bg-slate-950/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gold sm:text-[11px]">
-            {item.title}
-          </div>
           <p className="mt-2 text-xs leading-5 text-white/75 sm:mt-3 sm:text-sm sm:leading-6">
             {featured ? 'Premium lobby and signature design language.' : 'Architectural detail and elevated lifestyle imagery.'}
           </p>
